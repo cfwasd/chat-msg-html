@@ -1,0 +1,33 @@
+server:
+  port: 7000
+
+socketio:
+  host: 127.0.0.1
+  port: 7000
+#  work: 100
+#  allowCustomRequeste: true
+#  upgradeTimeout: 10000
+#  pingTimeout: 60000
+#  pingInterval: 25000
+#  maxHttpContentLength: 1048576
+#  minHttpContentLength: 1048576
+
+
+
+
+
+spring:
+  main:
+    lazy-initialization: false
+  mvc:
+    view:
+      prefix: /
+  datasource:
+    url: jdbc:mysql://localhost:3306/chat?serverTimezone=GMT%2B8&autoReconnect=false&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true
+    username: root
+    password: 889915
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+

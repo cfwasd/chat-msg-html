@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.chat.dao.privateMsg">
+    <select id="selectAll" resultType="com.example.chat.model.privateMessage">
+        select * from privateMsg
+    </select>
+        <select id="select" resultType="com.example.chat.model.privateMessage">
+            SELECT * FROM privateMsg
+            WHERE (send = #{send} AND receive = #{receive})
+            OR (send = #{receive} AND receive = #{send})
+        </select>
+
+    <insert id="insert" >
+        insert into privateMsg(send, receive, message) values(#{send}, #{receive}, #{message})
+    </insert>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.chat.dao.MsgMapper">
+    <select id="selectAll" resultType="com.example.chat.model.Msg">
+        select * from Msg
+    </select>
+<!--    <select id="add" resultType="com.example.chat.model.users">-->
+<!--        select * from users where user = #{user}-->
+<!--    </select>-->
+
+    <insert id="insert" >
+        insert into Msg(name, msg) values(#{name}, #{msg})
+    </insert>
+</mapper>
